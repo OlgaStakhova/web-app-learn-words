@@ -1,11 +1,9 @@
 import { FC, FormEvent, useState } from "react"
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from "react-redux";
-
 import { addAction } from '../redux/words/actions'
 
 export const AddNewWord: FC = () => {
-
     const [newWord, setNewWord] = useState('');
     const [newWordTranslation, setNewWordTranslation] = useState('');
 
@@ -23,7 +21,7 @@ export const AddNewWord: FC = () => {
             translation: newWordTranslation,
             id: uuidv4(),
         };
-        
+
         dispach(addAction(newWordItem));
         resetForm();
     };
@@ -43,7 +41,6 @@ export const AddNewWord: FC = () => {
                 className="newWord"
                 onSubmit={handelSubmitForm}
             >
-
                 <div className="field">
                     <label className="label">Word</label>
                     <div className="control">
@@ -82,5 +79,6 @@ export const AddNewWord: FC = () => {
                     </div>
                 </div>
             </form>
-        </>)
+        </>
+    )
 }

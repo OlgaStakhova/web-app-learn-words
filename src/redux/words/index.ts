@@ -1,9 +1,7 @@
 import { combineReducers, createReducer, PayloadAction } from '@reduxjs/toolkit'
 import { TypeResultItem } from '../../types/Result';
 import { TypeWordItem } from '../../types/Word';
-
 import {addAction, deleteAction, addResult, deleteResult} from './actions';
-
 
 const wordsReducer = createReducer< TypeWordItem[] | []>([], {
     [addAction.type]: (state, action: PayloadAction<TypeWordItem>) => {
@@ -22,8 +20,6 @@ const wordsReducer = createReducer< TypeWordItem[] | []>([], {
         return state = state.filter((item: TypeResultItem) => item.id !== action.payload);
      },
   });
-
-
 
 export const rootReducer = combineReducers({
     words: wordsReducer,

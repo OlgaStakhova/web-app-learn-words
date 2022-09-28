@@ -35,7 +35,7 @@
   margin-bottom: 15px;
 }
 
-.list-results{
+.list-results {
   display: flex;
   flex-direction: column;
   gap: 10px;
