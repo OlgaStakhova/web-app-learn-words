@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
+import { FC } from 'react';
 import './App.css';
+import { Navbar } from './components/Navbar';
+import { AddNewWord } from './components/AddNewWord';
+import { Training } from './components/Training';
+import { ResultsHistory } from './components/ResultsHistory';
+import { WordsList } from './components/WordsList';
 
-function App() {
+export const App: FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+
+      <div className="section">
+        <div className="container">
+          <Routes>
+            <Route path="/home" element={<WordsList />} />
+
+            <Route path="/newWord" element={<AddNewWord />} />
+
+            <Route path="/training" element={<Training />} />
+
+            <Route path="/resultsHistory" element={<ResultsHistory />} />
+
+            <Route
+              path="*"
+              element={<h1 className="title">Page not found</h1>}
+            />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+
