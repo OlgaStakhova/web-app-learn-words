@@ -42,7 +42,7 @@ export const PlayTraining: FC<Props> = (props) => {
             const result: TypeResultItem = {
                 id: uuidv4(),
                 date: new Date().toLocaleString(),
-                result: `${counterCorectAnsver * 10}%`,
+                result: (counterCorectAnsver === 0)? '0%' : `${(counterCorectAnsver + 1) * 10}%`,
             }
             dispach(addResult(result));
 
