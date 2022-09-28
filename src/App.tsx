@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { FC } from 'react';
 import './App.css';
 import { Navbar } from './components/Navbar';
@@ -15,7 +15,13 @@ export const App: FC = () => {
       <div className="section">
         <div className="container">
           <Routes>
-            <Route path="/home" element={<WordsList />} />
+          <Route
+              path="/"
+              element={<WordsList />}
+            />
+
+            <Route path="home" element={<Navigate to="/" replace />} />
+            {/* <Route path="/home" element={<WordsList />} /> */}
 
             <Route path="/newWord" element={<AddNewWord />} />
 
