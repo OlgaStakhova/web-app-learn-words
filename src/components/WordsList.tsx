@@ -13,6 +13,8 @@ export const WordsList: FC = () => {
         dispach(deleteAction(id))
     }
     return (
+        <>
+        <h2 className="app-title">Vocabulary</h2>
         <table
             className="table is-striped is-hoverable is-narrow is-fullwidth"
         >
@@ -54,14 +56,19 @@ export const WordsList: FC = () => {
                         <td className='wordItem'>{index + 1}</td>
                         <td className='wordItem'>{word.word}</td>
                         <td className='wordItem'>{word.translation}</td>
-                        <td><button type='button' onClick={() => handlerDelete(word.id)}>delete</button></td>
+                        <td>
+                            <button  
+                              type='button' 
+                              onClick={() => handlerDelete(word.id)}
+                              className="button is-info is-light"
+                            >
+                                delete
+                            </button>
+                        </td>
                     </tr>
                 ))}
             </tbody>
         </table>
-    );
+        </>
+        );
 };
-
-// function deleteWord(id: string): any {
-//     throw new Error('Function not implemented.');
-// }

@@ -28,14 +28,14 @@ export const Training: FC = () => {
     }
 
     return ( <>
-    <h2> Training</h2> 
-    {words.length < 9 && <p>'Add more words in vocabulary'</p>}
+    <h2 className="app-title"> Training</h2> 
+    {words.length < 9 && <p className="app-notification">'Add more words in vocabulary'</p>}
     {words.length > 9 && !startPlay
     && <button
-      className='runPlay button'
+      className='runPlay button is-link'
       onClick={handelRunPlay}
     >
-        Повторити слова
+        Repeat the words
     </button>}
     {startPlay && <PlayTraining playWords={playWords} />}
     </>)

@@ -38,9 +38,9 @@ export const AddNewWord: FC = () => {
 
     return (
         <>
-            <h2>Add new word</h2>
+            <h2 className="app-title">Add new word</h2>
             <form
-                className="NewWord"
+                className="newWord"
                 onSubmit={handelSubmitForm}
             >
 

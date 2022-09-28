@@ -16,12 +16,11 @@ export const App: FC = () => {
         <div className="container">
           <Routes>
           <Route
-              path="/"
+              path="home"
               element={<WordsList />}
             />
 
-            <Route path="home" element={<Navigate to="/" replace />} />
-            {/* <Route path="/home" element={<WordsList />} /> */}
+            <Route path="/" element={<Navigate to="home" replace />} />
 
             <Route path="/newWord" element={<AddNewWord />} />
 

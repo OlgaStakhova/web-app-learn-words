@@ -98,12 +98,16 @@ const handelСhoose = (choosedButText: string) => {
    
     return (
         <>
-            <h2>Сhoose the correct translation</h2>
+            <h2 className="app-notification">Сhoose the correct translation word:</h2>
 
-            <form action="" onChange={(event) => handelSubmitForm(event)}>
-                <label>{wordTranslate}</label>
+            <form 
+              action="" 
+              onChange={(event) => handelSubmitForm(event)}
+              className='form-play'
+            >
+                <label className='tag is-info is-large word-to-translate'>{wordTranslate}</label>
                 {ansvers.map((answer) => (
-                    <button key={answer.id} className='button' onClick={(event) => { 
+                    <button key={answer.id} className='button is-normal' onClick={(event) => { 
                         const value: string | null = (event.target as HTMLElement).textContent;
                         value && handelСhoose(value)
                     }}
