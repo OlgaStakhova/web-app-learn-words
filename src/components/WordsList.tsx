@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getWords } from '../redux/store';
 import { deleteAction } from '../redux/words/actions';
@@ -9,7 +9,11 @@ export const WordsList: FC = () => {
     const handlerDelete = (id: string) => {
         dispach(deleteAction(id))
     }
-    
+
+    useEffect(() => {
+        localStorage.setItem("words", JSON.stringify(words));
+    }, [words]);
+
     return (
         <>
             <h2 className="app-title">Vocabulary</h2>

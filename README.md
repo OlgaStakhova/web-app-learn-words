@@ -6,9 +6,13 @@ In this prodject I use:
 - Type script;
 - React-router;
 - Bulma from style;
--  Multiple classnames with CSS Modules in React;
+- Multiple classnames with CSS Modules in React;
+- LocalStorage;
 
-   In this app we have for pages. 
+   In this app we have four pages. 
+
+   After first start you have empty vocabulary, 
+   but when you added words, they save in localStorage.
 
    First page:
     - Vocabulary;
